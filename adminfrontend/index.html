@@ -297,7 +297,7 @@
 						for (let order of data.data) {
 							totalRevenue += order.totalPrice
 						}
-						document.querySelector('#totalRevenue').innerHTML = `$${totalRevenue}`;
+						document.querySelector('#totalRevenue').innerHTML = `$${(+totalRevenue).toFixed(2)}`;
 						document.querySelector('#totalOrders').innerHTML = data.data.length;
 						
                     })
