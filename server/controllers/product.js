@@ -75,6 +75,7 @@ exports.create = (req, res) => {
         return res.status(400).json({ error: "All products fields are required" });
     }
     const product = new Product(req.body);
+    console.log(req.file, "FILLLLLLe")
     product.photo.data = fs.readFileSync("./uploads/" + req.file.filename)
     product.photo.contentType = req.file.mimetype
     product.save((err, product) => {
