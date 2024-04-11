@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   const logout = () => {
 
-    fetch('http://localhost:9000/api/signout/' + localStorage.getItem('token'));
+    fetch('https://ecommerce-fullstack-nine.vercel.app/api/signout/' + localStorage.getItem('token'));
     localStorage.removeItem('token');
     localStorage.removeItem('userId');
     localStorage.removeItem('role');

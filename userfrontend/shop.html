@@ -200,7 +200,7 @@
         // Returns a list of unique categories of products found in the database
         function fetchUniqueCategories() {
             // Make a fetch GET request
-            fetch('http://localhost:9000/api/categories')
+            fetch('https://ecommerce-fullstack-nine.vercel.app/api/categories')
                 .then(response => response.json())
                 .then(data => {
                     const categories = document.getElementById('category');
@@ -294,7 +294,7 @@
                             </div>`;
                 ;
 
-                fetchImage(`http://localhost:9000/api/product/photo/${product['_id']}`, product['_id']);
+                fetchImage(`https://ecommerce-fullstack-nine.vercel.app/api/product/photo/${product['_id']}`, product['_id']);
                 a.appendChild(productCard);
                 products.appendChild(a);
             }
@@ -304,7 +304,7 @@
 
         function fetchProduct() {
             // Make a fetch GET request
-            fetch('http://localhost:9000/api/products')
+            fetch('https://ecommerce-fullstack-nine.vercel.app/api/products')
                 .then(response => response.json())
                 .then(data => {
                     populateProducts(data.data);
@@ -332,7 +332,7 @@
             data["products"] = {};
             data["products"][productId] = { quantity };
             data["user"] = userId;
-            fetch(`http://localhost:9000/api/cart/add/${userId}/${token}`, {
+            fetch(`https://ecommerce-fullstack-nine.vercel.app/api/cart/add/${userId}/${token}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

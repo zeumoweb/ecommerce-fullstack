@@ -1,5 +1,5 @@
 async function searchProduct(filters) {
-    return fetch('http://localhost:9000/api/products/by/search', {
+    return fetch('https://ecommerce-fullstack-nine.vercel.app/api/products/by/search', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

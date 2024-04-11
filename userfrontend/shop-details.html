@@ -210,7 +210,7 @@
             if (!productId) {
                 window.location.replace('./shop.html');
             }
-            fetch('http://localhost:9000/api/product/' + productId, {
+            fetch('https://ecommerce-fullstack-nine.vercel.app/api/product/' + productId, {
                 method: 'GET'
             })
                 .then(response => response.json())
@@ -219,7 +219,7 @@
                     document.getElementById("price").innerText = data.price;
                     document.getElementById("description").innerText = data.description;
                     document.getElementById('productId').innerText = productId;
-                    fetchImage(`http://localhost:9000/api/product/photo/${productId}`, "photo");
+                    fetchImage(`https://ecommerce-fullstack-nine.vercel.app/api/product/photo/${productId}`, "photo");
                 })
                 .catch(error => console.error('Error fetching data:', error));
         }
@@ -259,7 +259,7 @@
             data["products"] = {};
             data["products"][productId] = {quantity};
             data["user"] = userId;
-            fetch(`http://localhost:9000/api/cart/add/${userId}/${token}`, {
+            fetch(`https://ecommerce-fullstack-nine.vercel.app/api/cart/add/${userId}/${token}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

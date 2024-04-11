@@ -62,7 +62,7 @@
         data[key] = value;
     }
 
-    fetch('http://localhost:9000/api/signup', {
+    fetch('https://ecommerce-fullstack-nine.vercel.app/api/signup', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

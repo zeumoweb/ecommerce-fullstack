@@ -291,7 +291,7 @@
 
 function fetchProduct() {
                 // Make a fetch GET request
-                fetch('http://localhost:9000/api/products?limit=6&sortBy=createdAt&order=desc')
+                fetch('https://ecommerce-fullstack-nine.vercel.app/api/products?limit=6&sortBy=createdAt&order=desc')
                     .then(response => response.json())
                     .then(data => {
 						const products = document.getElementById('products');
@@ -342,7 +342,7 @@ function fetchProduct() {
                             </div>`;
 						;
 
-							fetchImage(`http://localhost:9000/api/product/photo/${product['_id']}`, product['_id']);
+							fetchImage(`https://ecommerce-fullstack-nine.vercel.app/api/product/photo/${product['_id']}`, product['_id']);
                             a.appendChild(productCard);
 							products.appendChild(a);
 						}
@@ -360,7 +360,7 @@ function fetchProduct() {
             data["products"] = {};
             data["products"][productId] = { quantity };
             data["user"] = userId;
-            fetch(`http://localhost:9000/api/cart/add/${userId}/${token}`, {
+            fetch(`https://ecommerce-fullstack-nine.vercel.app/api/cart/add/${userId}/${token}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
