@@ -6,7 +6,6 @@ const { errorHandler } = require("../helpers/dbErrorHandler");
 const { request } = require("express");
 const { OpenAI } = require('openai');
 
-const fs = require('fs');
 const path = require('path');
 
 // Get the current directory
