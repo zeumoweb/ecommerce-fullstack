@@ -17,6 +17,8 @@ const session = require('express-session');
 // app
 const app = express();
 
+console.log(process.env.JWT_SECRET)
+
 // Middlewares
 app.use(cors())
 app.use(morgan('dev'));
@@ -38,7 +40,7 @@ app.use('/api', productRoute)
 app.use('/api', cartRoute)
 app.use('/api', orderRoute)
 app.use('/' , (req, res) => {
-  return "Welcome to EliteStore API";
+  return res.send("Welcome to EliteStore API");
 })
 
 // database connection
@@ -50,7 +52,7 @@ db.once('open', () => {
   console.log('connected')
 })
 
-const port = process.env.PORT || 9000
+const port = process.env.PORT || 5000
 
 app.listen(port, () => {
   console.log('Listening to port', port);
