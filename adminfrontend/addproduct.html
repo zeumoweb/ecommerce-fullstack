@@ -303,7 +303,7 @@
                         alert("Product Successfully Added!");
                         window.location.replace('product.html');
                     })
-                    .catch(error => window.location.replace('login.html'));
+                    .catch(error => console.error('Error:', error));
 
             });
         </script>
