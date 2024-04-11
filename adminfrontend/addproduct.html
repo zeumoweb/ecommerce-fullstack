@@ -296,7 +296,10 @@
 
                 fetch(`https://ecommerce-fullstack-nine.vercel.app/api/product/create/${userId}/${token}`, {
                     method: 'POST',
-                    body: formData
+                    body: formData,
+                    headers: {
+        'Content-Type': 'multipart/form-data; boundary=' + "----WebKitFormBoundary7MA4YWxkTrZu0gW",
+    }
                 })
                     .then(response => {
                         return response.json();
