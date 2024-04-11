@@ -251,8 +251,8 @@
 		});
 
 		function fetchOrders() {
-			// Make a fetch GET request
-			fetch('https://ecommerce-fullstack-6weystx9o-zeumowebs-projects.vercel.app/api/orders/' + localStorage.getItem('userId') + '/' + localStorage.getItem('token'))
+			// Make a fetch GET request https://ecommerce-fullstack-661n8007o-zeumowebs-projects.vercel.app/
+			fetch('https://ecommerce-fullstack-nine.vercel.app/api/orders/' + localStorage.getItem('userId') + '/' + localStorage.getItem('token'))
 				.then(response => response.json())
 				.then(data => {
 					const tbody = document.querySelector('tbody');
@@ -282,7 +282,7 @@
 		}
 
 		const openModal = (id) => {
-            fetch(`https://ecommerce-fullstack-6weystx9o-zeumowebs-projects.vercel.app/api/order/${id}/${localStorage.getItem('userId')}/${localStorage.getItem('token')}`, {
+            fetch(`https://ecommerce-fullstack-nine.vercel.app/api/order/${id}/${localStorage.getItem('userId')}/${localStorage.getItem('token')}`, {
                 method: 'GET'
             })
                 .then(response => response.json())

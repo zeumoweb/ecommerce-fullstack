@@ -232,7 +232,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             function fetchProduct() {
                 // Make a fetch GET request
-                fetch('https://ecommerce-fullstack-6weystx9o-zeumowebs-projects.vercel.app/api/products')
+                fetch('https://ecommerce-fullstack-nine.vercel.app/api/products')
                     .then(response => response.json())
                     .then(data => {
 						const products = document.getElementById('products');
@@ -308,7 +308,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 							`;
 
-							fetchImage(`https://ecommerce-fullstack-6weystx9o-zeumowebs-projects.vercel.app/api/product/photo/${product['_id']}`, product['_id']);
+							fetchImage(`https://ecommerce-fullstack-nine.vercel.app/api/product/photo/${product['_id']}`, product['_id']);
 
 							products.appendChild(productCard);
 						}
@@ -323,7 +323,7 @@ document.addEventListener('DOMContentLoaded', function () {
 				return;
 			}
 
-			fetch(`https://ecommerce-fullstack-6weystx9o-zeumowebs-projects.vercel.app/api/product/${id}/${localStorage.getItem('userId')}/${localStorage.getItem('token')}`, {
+			fetch(`https://ecommerce-fullstack-nine.vercel.app/api/product/${id}/${localStorage.getItem('userId')}/${localStorage.getItem('token')}`, {
 				method: 'DELETE',
 			})
 				.then(response => response.json())
