@@ -17,7 +17,6 @@ const session = require('express-session');
 // app
 const app = express();
 
-console.log(process.env.JWT_SECRET)
 
 // Middlewares
 const corsOptions ={

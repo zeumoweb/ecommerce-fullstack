@@ -56,14 +56,17 @@ exports.listAllProducts = (req, res, next) => {
 
 
 exports.create = (req, res) => {
-    if (req.body.shipping === "true") {
+
+    if ( req.body.shipping && req.body.shipping === "true") {
         req.body.shipping = true;
+    } else {
+        req.body.shipping = false;
     }
 
+    console.log(req.body)
     const { name, shipping, price, description, quantity, category } = req.body;
     if (
         !name ||
-        !shipping ||
         !price ||
         !category ||
         !description ||
@@ -76,7 +79,7 @@ exports.create = (req, res) => {
     product.photo.contentType = req.file.mimetype
     product.save((err, product) => {
         if (err) return res.status(400).json({ error: errorHandler(err) });
-        res.status(200).json({ product });
+        res.status(200).json({ "message": "Product successfully created"});
     });
 }
 

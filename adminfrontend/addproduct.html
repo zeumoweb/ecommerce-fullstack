@@ -1,4 +1,4 @@
-<!DOCName html>
+<!DOCTYPE html>
     <html lang="en">
 
     <head>
@@ -290,9 +290,11 @@
             document.getElementById('addproduct').addEventListener('submit', function (event) {
                 event.preventDefault();
                 const formData = new FormData(this);
+                const userId = localStorage.getItem('userId');
+                const token = localStorage.getItem('token');
 
 
-                fetch('https://ecommerce-fullstack-nine.vercel.app/api/product/create/' + localStorage.getItem('userId') + '/' + localStorage.getItem('token'), {
+                fetch(`https://ecommerce-fullstack-nine.vercel.app/api/product/create/${userId}/${token}`, {
                     method: 'POST',
                     body: formData
                 })
@@ -301,12 +303,13 @@
                     })
                     .then(data => {
                         alert("Product Successfully Added!");
-                        window.location.replace('product.html');
+                        window.location.replace('./product.html');
                     })
-                    .catch(error => console.error('Error:', error));
+                    .catch(error => console.log('Error:', error));
 
             });
         </script>
+        <script src="assets/js/logout.js"></script>
 
     </body>
 

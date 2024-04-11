@@ -4,7 +4,6 @@ const { requiredLogin, isAdmin, isAuth, getToken } = require("../controllers/aut
 const router = require("express").Router();
 const { userById } = require("../controllers/user");
 const { chat, create, productById, remove, update, read, list, listAllProducts, listRelated, listCategories, listBySearch, photo } = require("../controllers/product");
-const { get } = require("lodash");
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
