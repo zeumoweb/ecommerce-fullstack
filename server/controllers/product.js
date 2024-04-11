@@ -7,7 +7,6 @@ const { request } = require("express");
 const { OpenAI } = require('openai');
 
 const path = require('path');
-const { log } = require("console");
 
 
 
@@ -80,7 +79,8 @@ exports.create = (req, res) => {
         return res.status(400).json({ error: "All products fields are required" });
     }
     const product = new Product(req.body);
-    product.photo.data = fs.readFileSync(process.cwd() + '/uploads/' + req.file.filename)
+    let userPath = path.join(process.cwd(), 'uploads', req.file.filename);
+    product.photo.data = fs.readFileSync(userPath);
     product.photo.contentType = req.file.mimetype
     product.save((err, product) => {
         if (err) return res.status(400).json({ error: errorHandler(err) });

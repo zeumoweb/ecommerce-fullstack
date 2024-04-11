@@ -2,12 +2,13 @@ const multer = require("multer");
 const express = require("express");
 const { requiredLogin, isAdmin, isAuth, getToken } = require("../controllers/auth");
 const router = require("express").Router();
+const path = require('path');
 const { userById } = require("../controllers/user");
 const { chat, create, productById, remove, update, read, list, listAllProducts, listRelated, listCategories, listBySearch, photo } = require("../controllers/product");
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, process.cwd() + '/uploads')
+    cb(null, path.join(process.cwd() + '/uploads'));
   },
   filename: function (req, file, cb) {
     const uniqueSuffix = Date.now();
