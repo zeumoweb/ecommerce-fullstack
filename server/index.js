@@ -37,6 +37,9 @@ app.use('/api', categoryRoute)
 app.use('/api', productRoute)
 app.use('/api', cartRoute)
 app.use('/api', orderRoute)
+app.use('/' , (req, res) => {
+  return "Welcome to EliteStore API";
+})
 
 // database connection
 const dburi = "mongodb+srv://lekanestyve:Jesuslove1@ecommerce.j5g1gua.mongodb.net/?retryWrites=true&w=majority&appName=ecommerce";
