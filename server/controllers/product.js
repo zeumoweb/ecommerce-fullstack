@@ -7,43 +7,9 @@ const { request } = require("express");
 const { OpenAI } = require('openai');
 
 const path = require('path');
+const { log } = require("console");
 
-// Get the current directory
-const currentDirectory = process.cwd();
 
-// Get the parent directory path
-const parentDirectory = path.join(currentDirectory, '..');
-
-// Read the contents of the parent directory
-fs.readdir(parentDirectory, { withFileTypes: true }, (err, files) => {
-    if (err) {
-        console.error('Error reading directory:', err);
-        return;
-    }
-
-    // Filter folders from the list of files
-    const folders = files.filter(file => file.isDirectory()).map(folder => folder.name);
-
-    // Print the list of folders
-    logger.info('Folders in the parent directory:', folders);
-});
-
-const winston = require('winston');
-
-// Create a Winston logger instance
-const logger = winston.createLogger({
-    level: 'info', // Set the log level (e.g., info, warn, error)
-    format: winston.format.combine(
-        winston.format.timestamp(), // Add timestamp to logs
-        winston.format.printf(({ timestamp, level, message }) => {
-            return `${timestamp} ${level}: ${message}`;
-        })
-    ),
-    transports: [
-        new winston.transports.Console() // Log to the console
-        // Add more transports as needed (e.g., log to a file, log to a database)
-    ]
-});
 
 
 const openai = new OpenAI();
@@ -114,9 +80,7 @@ exports.create = (req, res) => {
         return res.status(400).json({ error: "All products fields are required" });
     }
     const product = new Product(req.body);
-    logger.info('This is an info message');
-    logger.info(req.file, "FILLLLLLe")
-    product.photo.data = fs.readFileSync("./uploads/" + req.file.filename)
+    product.photo.data = fs.readFileSync(process.cwd() + '/uploads/' + req.file.filename)
     product.photo.contentType = req.file.mimetype
     product.save((err, product) => {
         if (err) return res.status(400).json({ error: errorHandler(err) });
