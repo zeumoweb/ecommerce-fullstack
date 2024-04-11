@@ -273,7 +273,7 @@
 
             function fetchData() {
                 // Make a fetch GET request
-                fetch('https://ecommerce-fullstack-nine.vercel.app/categories')
+                fetch('https://ecommerce-fullstack-nine.vercel.app/api/categories')
                     .then(response => response.json())
                     .then(data => {
                         const categories = document.getElementById('category');
