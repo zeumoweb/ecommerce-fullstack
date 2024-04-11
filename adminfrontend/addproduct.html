@@ -295,7 +295,7 @@
                 const token = localStorage.getItem('token');
 
 
-                fetch(`http://localhost:9000/api/product/create/${userId}/${token}`, {
+                fetch(`https://ecommerce-fullstack-nine.vercel.app/api/product/create/${userId}/${token}`, {
                     method: 'POST',
                     body: formData
                 })
