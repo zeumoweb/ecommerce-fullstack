@@ -11,7 +11,7 @@ window.chartColors = {
 
 function PlotChart() {
 	// Make a fetch GET request
-	fetch('http://localhost:9000/api/orders/' + localStorage.getItem('userId') + '/' + localStorage.getItem('token'))
+	fetch('https://ecommerce-fullstack-6weystx9o-zeumowebs-projects.vercel.app/api/orders/' + localStorage.getItem('userId') + '/' + localStorage.getItem('token'))
 		.then(response => response.json())
 		.then(data => {
 			let dates = [0, 0, 0, 0, 0, 0, 0]

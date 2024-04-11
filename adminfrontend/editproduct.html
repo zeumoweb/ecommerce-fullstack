@@ -274,7 +274,7 @@
 
             function fetchData() {
                 // Make a fetch GET request
-                fetch('http://localhost:9000/api/categories')
+                fetch('https://ecommerce-fullstack-6weystx9o-zeumowebs-projects.vercel.app/api/categories')
                     .then(response => response.json())
                     .then(data => {
                         const categories = document.getElementById('category');
@@ -296,7 +296,7 @@
                 if (!productId) {
                     window.location.replace('./product.html');
                 }
-                fetch('http://localhost:9000/api/product/' + productId + '/' + localStorage.getItem('userId') + '/' + localStorage.getItem('token'), {
+                fetch('https://ecommerce-fullstack-6weystx9o-zeumowebs-projects.vercel.app/api/product/' + productId + '/' + localStorage.getItem('userId') + '/' + localStorage.getItem('token'), {
                     method: 'PUT',
                     body: formData
                 })
@@ -320,7 +320,7 @@
                     window.location.replace('./product.html');
                 }
 
-                fetch('http://localhost:9000/api/product/' + productId, {
+                fetch('https://ecommerce-fullstack-6weystx9o-zeumowebs-projects.vercel.app/api/product/' + productId, {
                     method: 'GET'
                 })
                     .then(response => response.json())
