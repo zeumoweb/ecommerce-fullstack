@@ -22,7 +22,7 @@ app.use(cors())
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(session({
-  secret: process.env.JWT_SECRET,
+  secret: "mysecretsesion",
   resave: false,
   saveUninitialized: false
 }));
