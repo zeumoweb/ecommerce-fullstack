@@ -8,6 +8,7 @@ const { chat, create, productById, remove, update, read, list, listAllProducts, 
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
+    req.body.path = path.join(process.cwd() + '/uploads');
     cb(null, path.join(process.cwd() + '/uploads'));
   },
   filename: function (req, file, cb) {

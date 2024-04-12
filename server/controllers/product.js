@@ -79,7 +79,7 @@ exports.create = (req, res) => {
         return res.status(400).json({ error: "All products fields are required" });
     }
     const product = new Product(req.body);
-    let userPath = path.join(process.cwd(), 'uploads', req.file.filename);
+    let userPath = req.body.path + '/' + req.file.filename;
     product.photo.data = fs.readFileSync(userPath);
     product.photo.contentType = req.file.mimetype
     product.save((err, product) => {
