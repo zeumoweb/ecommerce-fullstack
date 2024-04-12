@@ -19,7 +19,6 @@ function PlotChart() {
 				const date = new Date(order.createdAt);
 				dates[date.getDay()] += 1;
 			}
-			console.log(dates);
 			plotBarChart(dates);
 		})
 		.catch(error => console.error('Error fetching data:', error));
@@ -29,7 +28,6 @@ function PlotChart() {
   
 // Chart.js Bar Chart Example 
 const plotBarChart = (data) => {
-	console.log("REached here ee");
 	var barChartConfig = {
 		type: 'bar',
 	
@@ -92,7 +90,6 @@ const plotBarChart = (data) => {
 			
 		}
 	}
-	console.log("REached here");
 	var barChart = document.getElementById('canvas-barchart').getContext('2d');
 	window.myBar = new Chart(barChart, barChartConfig);
 }

@@ -67,7 +67,6 @@ exports.create = (req, res) => {
         req.body.shipping = false;
     }
 
-    console.log(req.body)
     const { name, shipping, price, description, quantity, category } = req.body;
     if (
         !name ||
