@@ -29,6 +29,21 @@
     <div id="preloder">
         <div class="loader"></div>
     </div>
+    <!-- Offcanvas Menu Begin -->
+    <div class="offcanvas-menu-overlay"></div>
+    <div class="offcanvas-menu-wrapper">
+        <div class="offcanvas__option">
+
+        </div>
+        <div class="offcanvas__nav__option">
+            <a href="#" class="search-switch"><img src="img/icon/search.png" alt=""></a>
+            <a href="#"><img src="img/icon/heart.png" alt=""></a>
+            <a href="#"><img src="img/icon/cart.png" alt=""> <span>0</span></a>
+            <div class="price">$0.00</div>
+        </div>
+        <div id="mobile-menu-wrap"></div>
+    </div>
+    <!-- Offcanvas Menu End -->
 
 
 
@@ -234,7 +249,7 @@
                                     <td class="cart__close"><i class="fa fa-close" onclick="deleteFromCart('${productId}')" id="${productId}"></i></td>`;
                     tbody.appendChild(row);
                     fetchImage(`https://ecommerce-fullstack-nine.vercel.app/api/product/photo/${productId}`, productId);
-                    return +quantity * +data['price'] ?  +quantity * +data['price'] : 0;
+                    return +quantity * +data['price'] ? +quantity * +data['price'] : 0;
                 })
                 .catch(error => console.error('Error fetching data:', error));
         }

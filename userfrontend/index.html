@@ -11,7 +11,7 @@
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
-    rel="stylesheet">
+        rel="stylesheet">
 
     <!-- Css Styles -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
@@ -30,44 +30,60 @@
         <div class="loader"></div>
     </div>
 
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-3">
-                    <div class="header__logo">
-                        <a href="index.html">
-                            <img src="img/logo.png" alt="" style="width: 50%; height: auto;">
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                    <nav class="header__menu mobile-menu">
-                        <ul>
-                            <li class="active"><a href="./index.html">Home</a></li>
-                            <li><a href="./shop.html">Shop</a></li>
-                            <li ><a href="./chat.html">Chat</a></li>
-                            <li><a href="#">Pages</a>
-                                <ul class="dropdown">
-                                    <li><a href="./shopping-cart.html">Shopping Cart</a></li>
-                                    <li><a href="./checkout.html">Check Out</a></li>
+    <!-- Offcanvas Menu Begin -->
+    <div class="offcanvas-menu-overlay"></div>
+    <div class="offcanvas-menu-wrapper">
+        <div class="offcanvas__option">
 
-                                </ul>
-                            </li>
- 
-                            <li><a id="login" href="./login.html">login</a></li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="col-lg-3 col-md-3">
-                    <div class="header__nav__option">
-                        <a href="#" class="search-switch"><img src="img/icon/search.png" alt=""></a>
-                        <a href="#"><img src="img/icon/heart.png" alt=""></a>
-                        <a href="#"><img src="img/icon/cart.png" alt=""> <span>0</span></a>
-                        <div class="price"  id="cart-price">$0.00</div>
-                    </div>
+        </div>
+        <div class="offcanvas__nav__option">
+            <a href="#" class="search-switch"><img src="img/icon/search.png" alt=""></a>
+            <a href="#"><img src="img/icon/heart.png" alt=""></a>
+            <a href="#"><img src="img/icon/cart.png" alt=""> <span>0</span></a>
+            <div class="price">$0.00</div>
+        </div>
+        <div id="mobile-menu-wrap"></div>
+    </div>
+    <!-- Offcanvas Menu End -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-3">
+                <div class="header__logo">
+                    <a href="index.html">
+                        <img src="img/logo.png" alt="" style="width: 50%; height: auto;">
+                    </a>
                 </div>
             </div>
-            <div class="canvas__open"><i class="fa fa-bars"></i></div>
+            <div class="col-lg-6 col-md-6">
+                <nav class="header__menu mobile-menu">
+                    <ul>
+                        <li class="active"><a href="./index.html">Home</a></li>
+                        <li><a href="./shop.html">Shop</a></li>
+                        <li><a href="./chat.html">Chat</a></li>
+                        <li><a href="#">Pages</a>
+                            <ul class="dropdown">
+                                <li><a href="./shopping-cart.html">Shopping Cart</a></li>
+                                <li><a href="./checkout.html">Check Out</a></li>
+
+                            </ul>
+                        </li>
+
+                        <li><a id="login" href="./login.html">login</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-lg-3 col-md-3">
+                <div class="header__nav__option">
+                    <a href="#" class="search-switch"><img src="img/icon/search.png" alt=""></a>
+                    <a href="#"><img src="img/icon/heart.png" alt=""></a>
+                    <a href="#"><img src="img/icon/cart.png" alt=""> <span>0</span></a>
+                    <div class="price" id="cart-price">$0.00</div>
+                </div>
+            </div>
         </div>
+        <div class="canvas__open"><i class="fa fa-bars"></i></div>
+    </div>
     </header>
     <!-- Header Section End -->
 
@@ -81,8 +97,9 @@
                             <div class="hero__text">
                                 <h6>Summer Collection</h6>
                                 <h2>Fall - Winter Collections 2024</h2>
-                                <p style="color:white; font-weight: 400;"> specialist label creating luxury essentials. Ethically crafted with an unwavering
-                                commitment to exceptional quality.</p>
+                                <p style="color:white; font-weight: 400;"> specialist label creating luxury essentials.
+                                    Ethically crafted with an unwavering
+                                    commitment to exceptional quality.</p>
                                 <a href="./shop.html" class="primary-btn">Shop now <span class="arrow_right"></span></a>
                                 <div class="hero__social">
                                     <a href="#"><i class="fa fa-facebook"></i></a>
@@ -103,7 +120,7 @@
                                 <h6>Summer Collection</h6>
                                 <h2>Fall - Winter Collections 2024</h2>
                                 <p>A specialist label creating luxury essentials. Ethically crafted with an unwavering
-                                commitment to exceptional quality.</p>
+                                    commitment to exceptional quality.</p>
                                 <a href="./shop.html" class="primary-btn">Shop now <span class="arrow_right"></span></a>
                                 <div class="hero__social">
                                     <a href="#"><i class="fa fa-facebook"></i></a>
@@ -173,7 +190,7 @@
                 </div>
             </div>
             <div class="row product__filter" id="products">
-                
+
             </div>
         </div>
     </section>
@@ -207,7 +224,7 @@
     </section>
     <!-- Instagram Section End -->
 
-    
+
     <!-- Footer Section Begin -->
     <footer class="footer">
         <div class="container">
@@ -226,7 +243,7 @@
                             <script>
                                 document.write(new Date().getFullYear());
                             </script>
-                            All rights reserved 
+                            All rights reserved
                         </p>
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     </div>
@@ -276,7 +293,7 @@
                 const blob = await response.blob();
                 const reader = new FileReader();
 
-                reader.onload = function() {
+                reader.onload = function () {
                     const imageUrl = reader.result;
                     document.getElementById(id).setAttribute("data-setbg", imageUrl);
                     document.getElementById(id).style.backgroundImage = `url(${imageUrl})`;
@@ -285,25 +302,26 @@
                 reader.readAsDataURL(blob);
             } catch (error) {
                 console.error(error);
-            }}
+            }
+        }
 
-function fetchProduct() {
-                // Make a fetch GET request
-                fetch('https://ecommerce-fullstack-nine.vercel.app/api/products?limit=6&sortBy=createdAt&order=desc')
-                    .then(response => response.json())
-                    .then(data => {
-						const products = document.getElementById('products');
-						products.innerHTML = '';
-						for (const product of data.data){
-							const productCard = document.createElement('div');
-                            const a = document.createElement('a');
-                            a.setAttribute('href', `./shop-details.html?id=${product['_id']}`);
-                            a.setAttribute('class', '"col-lg-4 col-md-6 col-sm-6"')
-                            a.style.display = 'block';
-                            a.style.width = '100%';
-                            a.style.height = '100%';
-							
-							productCard.innerHTML = `<div class="product__item sale">
+        function fetchProduct() {
+            // Make a fetch GET request
+            fetch('https://ecommerce-fullstack-nine.vercel.app/api/products?limit=6&sortBy=createdAt&order=desc')
+                .then(response => response.json())
+                .then(data => {
+                    const products = document.getElementById('products');
+                    products.innerHTML = '';
+                    for (const product of data.data) {
+                        const productCard = document.createElement('div');
+                        const a = document.createElement('a');
+                        a.setAttribute('href', `./shop-details.html?id=${product['_id']}`);
+                        a.setAttribute('class', '"col-lg-4 col-md-6 col-sm-6"')
+                        a.style.display = 'block';
+                        a.style.width = '100%';
+                        a.style.height = '100%';
+
+                        productCard.innerHTML = `<div class="product__item sale">
                                 <div class="product__item__pic set-bg" data-setbg="img/product/product-3.jpg" id=${product["_id"]}>
                                     <span class="label">Sale</span>
                                     <ul class="product__hover">
@@ -338,19 +356,19 @@ function fetchProduct() {
                                     </div>
                                 </div>
                             </div>`;
-						;
+                        ;
 
-							fetchImage(`https://ecommerce-fullstack-nine.vercel.app/api/product/photo/${product['_id']}`, product['_id']);
-                            a.appendChild(productCard);
-							products.appendChild(a);
-						}
-						
-                    })
-                    .catch(error => console.error('Error fetching data:', error));
-            }
+                        fetchImage(`https://ecommerce-fullstack-nine.vercel.app/api/product/photo/${product['_id']}`, product['_id']);
+                        a.appendChild(productCard);
+                        products.appendChild(a);
+                    }
+
+                })
+                .catch(error => console.error('Error fetching data:', error));
+        }
 
 
-            const addToCart = (productId) => {
+        const addToCart = (productId) => {
             const userId = localStorage.getItem('userId');
             const token = localStorage.getItem('token');
             const quantity = 1;
@@ -372,7 +390,7 @@ function fetchProduct() {
                         throw new Error('Please create an account or login to add to cart');
                     }
                     return response.json();
-                
+
                 })
                 .then(data => {
                     let price = document.getElementById("price").innerText

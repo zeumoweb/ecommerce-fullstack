@@ -30,6 +30,22 @@
         <div class="loader"></div>
     </div>
 
+    <!-- Offcanvas Menu Begin -->
+    <div class="offcanvas-menu-overlay"></div>
+    <div class="offcanvas-menu-wrapper">
+        <div class="offcanvas__option">
+
+        </div>
+        <div class="offcanvas__nav__option">
+            <a href="#" class="search-switch"><img src="img/icon/search.png" alt=""></a>
+            <a href="#"><img src="img/icon/heart.png" alt=""></a>
+            <a href="#"><img src="img/icon/cart.png" alt=""> <span>0</span></a>
+            <div class="price">$0.00</div>
+        </div>
+        <div id="mobile-menu-wrap"></div>
+    </div>
+    <!-- Offcanvas Menu End -->
+
 
     <div class="container">
         <div class="row">
@@ -62,7 +78,7 @@
                     <a href="#" class="search-switch"><img src="img/icon/search.png" alt=""></a>
                     <a href="./shopping-cart.html"><img src="img/icon/heart.png" alt=""></a>
                     <a href="./shopping-cart.html"><img src="img/icon/cart.png" alt=""> <span>0</span></a>
-                    <div class="price"  id="cart-price">$0.00</div>
+                    <div class="price" id="cart-price">$0.00</div>
                 </div>
             </div>
         </div>
@@ -114,11 +130,12 @@
                                 <div class="product__details__cart__option">
                                     <div class="quantity">
                                         <div class="pro-qty">
-                                            <input type="text" id ="quantity" value="1">
+                                            <input type="text" id="quantity" value="1">
                                         </div>
                                     </div>
                                     <a href="#" class="primary-btn" id="add-to-cart">add to cart</a>
-                                    <p id="message" style="color: rgb(72, 145, 72); margin-top: 2px; font-size: 20px;"></p>
+                                    <p id="message" style="color: rgb(72, 145, 72); margin-top: 2px; font-size: 20px;">
+                                    </p>
                                 </div>
 
                             </div>
@@ -145,15 +162,16 @@
 
                                         <div class="product__details__tab__content__item">
                                             <h5>Products Infomation</h5>
-                                            <p id="description">A Pocket PC is a handheld computer, which features many of the same
+                                            <p id="description">A Pocket PC is a handheld computer, which features many
+                                                of the same
                                                 capabilities as a modern PC. These handy little devices allow
                                                 individuals to retrieve and store e-mail messages, create a contact
                                                 file, coordinate appointments, surf the internet, exchange text messages
                                                 and more. Every product that is labeled as a Pocket PC must be
                                                 accompanied with specific software to operate the unit and must feature
                                                 a touchscreen and touchpad.</p>
-                                           <br>
-                                           <br>
+                                            <br>
+                                            <br>
                                         </div>
 
                                     </div>
@@ -233,7 +251,7 @@
                 const blob = await response.blob();
                 const reader = new FileReader();
 
-                reader.onload = function() {
+                reader.onload = function () {
                     const imageUrl = reader.result;
                     document.getElementById(id).setAttribute('src', `${imageUrl}`);
                 };
@@ -241,10 +259,11 @@
                 reader.readAsDataURL(blob);
             } catch (error) {
                 console.error(error);
-            }}
-            
-        
-        
+            }
+        }
+
+
+
         const addToCart = () => {
             const userId = localStorage.getItem('userId');
             const token = localStorage.getItem('token');
@@ -256,7 +275,7 @@
             }
             const data = {}
             data["products"] = {};
-            data["products"][productId] = {quantity};
+            data["products"][productId] = { quantity };
             data["user"] = userId;
             fetch(`https://ecommerce-fullstack-nine.vercel.app/api/cart/add/${userId}/${token}`, {
                 method: 'POST',
@@ -272,13 +291,13 @@
                         throw new Error('Failed to add to cart');
                     }
                     return response.json();
-                
+
                 })
                 .then(data => {
                     let price = document.getElementById("price").innerText
                     price = price.replace('$', '');
                     const prev_total = localStorage.getItem('total_price');
-                    localStorage.setItem('total_price', parseFloat(prev_total) + (parseFloat(price)*parseInt(quantity)));
+                    localStorage.setItem('total_price', parseFloat(prev_total) + (parseFloat(price) * parseInt(quantity)));
                     document.getElementById('cart-price').innerText = `$${(+localStorage.getItem('total_price')).toFixed(2)}`;
                     showMessage('message', 'Added to cart', 3000);
                 })
@@ -289,7 +308,7 @@
         addToCartButton.addEventListener('click', addToCart);
 
 
-        
+
     </script>
 
     <!-- Js Plugins -->

@@ -11,7 +11,7 @@
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
-    rel="stylesheet">
+        rel="stylesheet">
 
     <!-- Css Styles -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
@@ -23,151 +23,160 @@
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <style>
+        .chatbot-container {
+            max-width: 100%;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
 
-.chatbot-container {
-    max-width: 100%;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-}
+        .chatbot-header {
+            text-align: center;
+            margin-bottom: 20px;
+            padding-top: 10px;
+            border: 2px solid #f2f2f2;
+        }
 
-.chatbot-header {
-    text-align: center;
-    margin-bottom: 20px;
-    padding-top: 10px;
-    border: 2px solid #f2f2f2;
-}
+        .chatbot-header h1 {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
 
-.chatbot-header h1 {
-    font-size: 24px;
-    margin-bottom: 5px;
-}
-
-.chatbot-header p {
-    color: #888;
-}
+        .chatbot-header p {
+            color: #888;
+        }
 
 
-.chatbot-messages {
-    height: 300px;
-    overflow-y: scroll;
-    padding: 10px;
-    border-bottom: 2px solid #f2f2f2;
-}
+        .chatbot-messages {
+            height: 300px;
+            overflow-y: scroll;
+            padding: 10px;
+            border-bottom: 2px solid #f2f2f2;
+        }
 
-.chatbot-input {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-}
+        .chatbot-input {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+        }
 
-.chatbot-input input {
-    flex: 1;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
+        .chatbot-input input {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
 
-.chatbot-input button {
-    padding: 8px 16px;
-    background-color: rgb(123, 26, 26);
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
+        .chatbot-input button {
+            padding: 8px 16px;
+            background-color: rgb(123, 26, 26);
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
 
-.message {
-    padding: 8px 12px;
-    margin: 8px 0;
-    border-radius: 8px;
-}
+        .message {
+            padding: 8px 12px;
+            margin: 8px 0;
+            border-radius: 8px;
+        }
 
-.user-message {
-    background-color: rgb(243, 230, 230);
-    color: rgb(215, 87, 87);
-    align-self: flex-end;
-}
+        .user-message {
+            background-color: rgb(243, 230, 230);
+            color: rgb(215, 87, 87);
+            align-self: flex-end;
+        }
 
-.bot-message {
-    background-color: #f0f0f0;
-    color: #333;
-    align-self: flex-start;
-}
+        .bot-message {
+            background-color: #f0f0f0;
+            color: #333;
+            align-self: flex-start;
+        }
 
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
 
-.product-card {
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-    background-color: #fff;
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    border-radius: 10px;
-    position: relative; /* For button positioning */
-}
+        .product-card {
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            background-color: #fff;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            border-radius: 10px;
+            position: relative;
+            /* For button positioning */
+        }
 
-.product-image-wrapper {
-    position: relative; /* For image hover effect */
-    overflow: hidden; /* Clip overflowing content */
-}
+        .product-image-wrapper {
+            position: relative;
+            /* For image hover effect */
+            overflow: hidden;
+            /* Clip overflowing content */
+        }
 
-.product-image-wrapper img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover; /* Maintain aspect ratio and crop if necessary */
-    transition: transform 0.3s ease; /* Smooth hover effect */
-}
+        .product-image-wrapper img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            /* Maintain aspect ratio and crop if necessary */
+            transition: transform 0.3s ease;
+            /* Smooth hover effect */
+        }
 
-.product-card:hover .product-image-wrapper img {
-    transform: scale(1.1); /* Zoom on hover */
-}
+        .product-card:hover .product-image-wrapper img {
+            transform: scale(1.1);
+            /* Zoom on hover */
+        }
 
-.add-to-cart {
-    position: absolute; /* Position button over image */
-    bottom: 10px;
-    right: 10px;
-    background-color: rgb(123, 26, 26); /* Green color for button */
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    opacity: 0; /* Initially hide button */
-    transition: opacity 0.3s ease; /* Smooth fade-in on hover */
-}
+        .add-to-cart {
+            position: absolute;
+            /* Position button over image */
+            bottom: 10px;
+            right: 10px;
+            background-color: rgb(123, 26, 26);
+            /* Green color for button */
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            opacity: 0;
+            /* Initially hide button */
+            transition: opacity 0.3s ease;
+            /* Smooth fade-in on hover */
+        }
 
-.product-card:hover .add-to-cart {
-    opacity: 1; /* Button appears on hover */
-}
+        .product-card:hover .add-to-cart {
+            opacity: 1;
+            /* Button appears on hover */
+        }
 
-.product-info {
-    padding: 15px;
-    text-align: center;
-}
+        .product-info {
+            padding: 15px;
+            text-align: center;
+        }
 
-.product-info h3 {
-    font-size: 18px;
-    margin-bottom: 5px;
-}
+        .product-info h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
 
-.product-info p.price {
-    color: #333;
-    font-weight: bold;
-}
+        .product-info p.price {
+            color: #333;
+            font-weight: bold;
+        }
 
-.products {
-    display: flex;
-    flex-direction: row;
-}
-
+        .products {
+            display: flex;
+            flex-direction: row;
+        }
     </style>
 </head>
 
@@ -179,7 +188,18 @@ body {
 
     <!-- Offcanvas Menu Begin -->
     <div class="offcanvas-menu-overlay"></div>
-    
+    <div class="offcanvas-menu-wrapper">
+        <div class="offcanvas__option">
+
+        </div>
+        <div class="offcanvas__nav__option">
+            <a href="#" class="search-switch"><img src="img/icon/search.png" alt=""></a>
+            <a href="#"><img src="img/icon/heart.png" alt=""></a>
+            <a href="#"><img src="img/icon/cart.png" alt=""> <span>0</span></a>
+            <div class="price">$0.00</div>
+        </div>
+        <div id="mobile-menu-wrap"></div>
+    </div>
     <!-- Offcanvas Menu End -->
 
     <!-- Header Section Begin -->
@@ -207,7 +227,7 @@ body {
 
                                 </ul>
                             </li>
-                            <li ><a id="login" href="./login.html">Login</a></li>
+                            <li><a id="login" href="./login.html">Login</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -276,52 +296,52 @@ body {
     <script>
 
 
-document.getElementById('chat-form').addEventListener('submit', function (e) {
-    e.preventDefault();
-    sendMessage();
-});
+        document.getElementById('chat-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            sendMessage();
+        });
 
-    function sendMessage() {
-    const userInput = document.getElementById('user-input').value;
-    if (userInput.trim() !== '') {
-        addMessage(`You: ${userInput}`, 'user');
-        simulateBotResponse(userInput);
-        document.getElementById('user-input').value = ''; // Clear input field after sending message
-    }
-}
+        function sendMessage() {
+            const userInput = document.getElementById('user-input').value;
+            if (userInput.trim() !== '') {
+                addMessage(`You: ${userInput}`, 'user');
+                simulateBotResponse(userInput);
+                document.getElementById('user-input').value = ''; // Clear input field after sending message
+            }
+        }
 
-async function  simulateBotResponse(userInput) {
+        async function simulateBotResponse(userInput) {
 
-    const prev_messages = document.querySelectorAll('.message');
-    const lastMessage = prev_messages[prev_messages.length - 1].textContent;
-    const input = {};
-    input['prompt'] = lastMessage;
-    
-    const response = await fetch('https://ecommerce-fullstack-nine.vercel.app/api/product/chat', {
-        method: 'POST',
-        headers: {
+            const prev_messages = document.querySelectorAll('.message');
+            const lastMessage = prev_messages[prev_messages.length - 1].textContent;
+            const input = {};
+            input['prompt'] = lastMessage;
+
+            const response = await fetch('https://ecommerce-fullstack-nine.vercel.app/api/product/chat', {
+                method: 'POST',
+                headers: {
                     'Content-Type': 'application/json'
                 },
-        body: JSON.stringify(input),
-    });
+                body: JSON.stringify(input),
+            });
 
-    if (!response.ok) {
-        throw new Error('Failed to fetch bot response');
-    }
+            if (!response.ok) {
+                throw new Error('Failed to fetch bot response');
+            }
 
-    let data = await response.json();
-    data = JSON.parse(data.data);
-    const productIds = data.productIds;
-    const messages = document.getElementById('chatbot-messages');
-    const products = document.createElement('div');
-    products.classList.add('products');
-    for (const productId of productIds) {
-        const product = await fetchProduct(productId);
-        const productCard = document.createElement('div');
-        productCard.classList.add('product-card');
-        productCard.setAttribute('style', 'margin: 4px;')
-        
-        productCard.innerHTML = `
+            let data = await response.json();
+            data = JSON.parse(data.data);
+            const productIds = data.productIds;
+            const messages = document.getElementById('chatbot-messages');
+            const products = document.createElement('div');
+            products.classList.add('products');
+            for (const productId of productIds) {
+                const product = await fetchProduct(productId);
+                const productCard = document.createElement('div');
+                productCard.classList.add('product-card');
+                productCard.setAttribute('style', 'margin: 4px;')
+
+                productCard.innerHTML = `
                     <div class="product-image-wrapper">
                         <a href="./shop-details.html?id=${product['_id']}" ><img class="${product['_id']}" src="" alt="${product['name']}"></a>
                         <button class="add-to-cart" onclick="addToCart(event, '${productId}')" data-id="${product['_id']}">Add to Cart</button>
@@ -330,40 +350,40 @@ async function  simulateBotResponse(userInput) {
                         <h3>${product['name']}</h3>
                         <p class="price" id="price">$${product['price']}</p>
                     </div>`;
-        products.appendChild(productCard);
-    }
-    
-    messages.appendChild(products);
-    for (const productId of productIds) {
-        await fetchImage(`https://ecommerce-fullstack-nine.vercel.app/api/product/photo/${productId}`, productId);
-    }
+                products.appendChild(productCard);
+            }
+
+            messages.appendChild(products);
+            for (const productId of productIds) {
+                await fetchImage(`https://ecommerce-fullstack-nine.vercel.app/api/product/photo/${productId}`, productId);
+            }
 
 
-        addMessage(`Mike: ${data.message}`, 'bot');
-}
+            addMessage(`Mike: ${data.message}`, 'bot');
+        }
 
-function addMessage(message, sender) {
-    const chatbotMessages = document.getElementById('chatbot-messages');
-    const messageElement = document.createElement('div');
-    messageElement.classList.add('message', sender === 'user' ? 'user-message' : 'bot-message');
-    messageElement.textContent = message;
-    chatbotMessages.appendChild(messageElement);
-    chatbotMessages.scrollTop = chatbotMessages.scrollHeight; // Scroll to bottom of chat
-}
+        function addMessage(message, sender) {
+            const chatbotMessages = document.getElementById('chatbot-messages');
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('message', sender === 'user' ? 'user-message' : 'bot-message');
+            messageElement.textContent = message;
+            chatbotMessages.appendChild(messageElement);
+            chatbotMessages.scrollTop = chatbotMessages.scrollHeight; // Scroll to bottom of chat
+        }
 
-function fetchProduct(productId) {
-        return fetch('https://ecommerce-fullstack-nine.vercel.app/api/product/' + productId, {
-            method: 'GET'
-        })
-            .then(response => response.json())
-            .then(data => {
-                return data; 
+        function fetchProduct(productId) {
+            return fetch('https://ecommerce-fullstack-nine.vercel.app/api/product/' + productId, {
+                method: 'GET'
             })
-            .catch(error => console.error('Error fetching data:', error));
-    }
+                .then(response => response.json())
+                .then(data => {
+                    return data;
+                })
+                .catch(error => console.error('Error fetching data:', error));
+        }
 
 
-    async function fetchImage(url, id) {
+        async function fetchImage(url, id) {
             try {
                 const response = await fetch(url);
                 if (!response.ok) {
@@ -373,7 +393,7 @@ function fetchProduct(productId) {
                 const blob = await response.blob();
                 const reader = new FileReader();
                 const img = document.createElement('img');
-                reader.onload = function() {
+                reader.onload = function () {
                     const imageUrl = reader.result;
                     let img = document.getElementsByClassName(`${id}`);
                     img = img[img.length - 1];
@@ -384,7 +404,8 @@ function fetchProduct(productId) {
                 return img;
             } catch (error) {
                 console.error(error);
-            }}
+            }
+        }
 
         const addToCart = (event, productId) => {
             const userId = localStorage.getItem('userId');
@@ -392,7 +413,7 @@ function fetchProduct(productId) {
             const quantity = 1;
             const data = {}
             data["products"] = {};
-            data["products"][productId] = {quantity};
+            data["products"][productId] = { quantity };
             data["user"] = userId;
             fetch(`https://ecommerce-fullstack-nine.vercel.app/api/cart/add/${userId}/${token}`, {
                 method: 'POST',
@@ -401,15 +422,14 @@ function fetchProduct(productId) {
                 },
                 body: JSON.stringify(data)
             })
-                .then(response => 
-                {
+                .then(response => {
                     if (!response.ok) {
                         alert('Please create an account or login to add to cart');
                         window.location.href = './login.html';
                         throw new Error('Please create an account or login to add to cart');
                     }
                     return response.json();
-                
+
                 })
                 .then(data => {
                     let price = event.target.parentElement.parentElement.querySelector('#price').innerText;
@@ -425,10 +445,10 @@ function fetchProduct(productId) {
 
 
 
-// Simulate initial greeting message from the bot when the page loads
-window.onload = () => {
-    addMessage('Mike: Hello there! Feel free to ask me anything about our products.', 'bot');
-};
+        // Simulate initial greeting message from the bot when the page loads
+        window.onload = () => {
+            addMessage('Mike: Hello there! Feel free to ask me anything about our products.', 'bot');
+        };
 
 
 
