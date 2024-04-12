@@ -296,7 +296,7 @@
                 if (!productId) {
                     window.location.replace('./product.html');
                 }
-                fetch('https://ecommerce-fullstack-nine.vercel.app/api/product/' + productId + '/' + localStorage.getItem('userId') + '/' + localStorage.getItem('token'), {
+                fetch('https://ecommerce-fullstack-muv0.onrender.com/api/product/' + productId + '/' + localStorage.getItem('userId') + '/' + localStorage.getItem('token'), {
                     method: 'PUT',
                     body: formData
                 })
